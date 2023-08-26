@@ -5,20 +5,25 @@
     <title>List readers</title>
 </head>
 <body>
-        <h1>Список читателей</h1>
+    <h1>Список читателей</h1>
 
-        {% if reader_list %}
-        <ul>
+    {% if reader_list %}
+    <ul>
 
-          {% for reader in reader_list %}
-          <li>
-            <a href="{{ usercreateview }}"> {{ reader.user.last_name_number }} </a>
-          </li>
-          {% endfor %}
+      {% for reader in reader_list %}
+      <li>
+        <a href="{{ usercreateview }}"> {{ reader.user.last_name_number }} </a>
+      </li>
+      {% endfor %}
 
-        </ul>
-        {% else %}
-          <p>Вас нет в списке читателей</p>
-        {% endif %}
+    </ul>
+    {% else %}
+      <p>Вас нет в списке читателей</p>
+    {% endif %}
+    <form action="create_user/" method="post">
+        {% csrf_token %}
+        <input type="text" name="content">
+        <input type="submit" value="Save">
+    </form>
 </body>
 </html>

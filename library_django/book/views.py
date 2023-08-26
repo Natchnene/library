@@ -9,17 +9,14 @@ from .models import Book, IssueBook
 
 
 class InLibraryBookListView(ListView):
-    model = IssueBook
+    model = Book
     template_name = "list_books_in_library.html"
 
     def get_queryset(self):
-        books = IssueBook.objects.filter(book_return__isnull=False)
         all_books = Book.objects.all()
-        books_issue = IssueBook.objects.all()
-        books_new = all_books.exclude(id__in=books_issue.values("id"))
-        queryset = chain(books, books_new)
-        if isinstance(queryset, chain):
-            return queryset
+        books_on_hand = IssueBook.objects.filter(book_return__isnull=True)
+        books_in_library = all_books.exclude(id__in=books_on_hand.values("id"))
+        return books_in_library
 
 
 class OnHandBookListView(ListView):
