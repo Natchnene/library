@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<h1>Список книг у читателей</h1>
+    <ul>
+
+      {% for object in object_list %}
+      <li>
+        <a> {{ object.book.unique_number }} - {{object.book.name}} |
+            Читатель: {{object.reader.user.last_name_number}} |
+            Дата выдачи: {{object.book_get}} </a>
+      </li>
+       {% endfor %}
+
+    </ul>
+</body>
+</html>

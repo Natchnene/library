@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<h1>Список книг на остатке в библиотеке</h1>
+    <ul>
+
+      {% for object in object_list %}
+      <li>
+        <a href="{{ get_book }}"> {{ object.unique_number }} - {{object.name}} </a>
+      </li>
+       {% endfor %}
+
+    </ul>
+</body>
+</html>
