@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get book</title>
+    <title>Return Book</title>
 </head>
 <body>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Взять книгу"/>
+        <p>Are you sure want to delete "{{ object }}"</p>
+        <input type="submit" value="Вернуть книгу"/>
     </form>
 </body>
 </html>

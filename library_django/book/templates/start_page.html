@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/book/list_books_in_library/">
+      {% csrf_token %}
+      <button> Книги в наличии </button>
+    </form>
+    <form action="http://127.0.0.1:8000/book/list_books_on_hand/">
+      {% csrf_token %}
+      <button> Книги у читателей </button>
+    </form>
+</body>
+</html>

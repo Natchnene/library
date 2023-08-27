@@ -10,9 +10,10 @@
 
       {% for object in object_list %}
       <li>
-        <a href="{{ get_book }}"> {{ object.unique_number }} - {{object.name}} </a>
+        <a href="http://127.0.0.1:8000/book/get_book/"> {{ object.unique_number }} - {{object.name}} </a>
       </li>
-       {% endfor %}
+      {% endfor %}
+
 
     </ul>
 </body>

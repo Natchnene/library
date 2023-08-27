@@ -13,7 +13,7 @@ class Author(models.Model, DateTimeMixin):
 
 
 class Book(models.Model, DateTimeMixin):
-    unique_number = models.CharField(_("unique book number"), max_length=250, blank=False)
+    unique_number = models.CharField(_("unique book number"), max_length=250, blank=False, unique=True)
     name = models.CharField(_("book title"), max_length=250, blank=False)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
@@ -24,7 +24,7 @@ class Book(models.Model, DateTimeMixin):
 class IssueBook(models.Model, DateTimeMixin):
     book_get = models.DateField(blank=True, null=True)
     book_return = models.DateField(blank=True, null=True)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    book = models.OneToOneField(Book, on_delete=models.CASCADE)
     reader = models.ForeignKey("reader.Reader", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
