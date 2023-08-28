@@ -5,20 +5,19 @@
     <title>List readers</title>
 </head>
 <body>
-        <h1>Список читателей</h1>
+    <h1>Список читателей</h1>
 
-        {% if reader_list %}
-        <ul>
+    <ul>
 
-          {% for reader in reader_list %}
-          <li>
-            <a href="{{ usercreateview }}"> {{ reader.user.last_name_number }} </a>
-          </li>
-          {% endfor %}
+      {% for object in object_list %}
+      <li>
+        <a href="http://127.0.0.1:8000/book/start_page_book/"> {{ object.last_name_number }} </a>
+      </li>
+      {% endfor %}
 
-        </ul>
-        {% else %}
-          <p>Вас нет в списке читателей</p>
-        {% endif %}
+    </ul>
+
+        <a href="/reader/create_user/">  Добавить пользователя </a>
+
 </body>
 </html>
