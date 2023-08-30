@@ -11,7 +11,7 @@
 
       {% for object in object_list %}
       <li>
-        <a href="http://127.0.0.1:8000/book/start_page_book/"> {{ object.last_name_number }} </a>
+        <a href="http://127.0.0.1:8000/book/start_page_book/{{ object.id }}"> {{ object.last_name_id }} </a>
       </li>
       {% endfor %}
 

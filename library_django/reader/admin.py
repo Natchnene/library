@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-from .models import Reader, User
+from .models import Reader
 
-admin.site.register(User)
 admin.site.register(Reader)

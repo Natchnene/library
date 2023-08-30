@@ -7,14 +7,12 @@
 <body>
 <h1>Список книг на остатке в библиотеке</h1>
     <ul>
-
-      {% for object in object_list %}
+      {% for book in books %}
       <li>
-        <a href="http://127.0.0.1:8000/book/get_book/"> {{ object.unique_number }} - {{object.name}} </a>
+        <a> {{ book.id }} - {{book.name}} </a>
       </li>
       {% endfor %}
-
-
     </ul>
+    <a href="http://127.0.0.1:8000/book/form_for_create_issue_book/reader/{{ reader.id }}">Взять книгу</a>
 </body>
 </html>

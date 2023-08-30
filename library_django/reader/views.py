@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView
 
-from .models import Reader, User
+from .models import Reader
 
 
 class UsersListView(ListView):
-    model = User
+    model = Reader
     template_name = "list_readers.html"
 
 
 class UserCreateView(CreateView):
-    model = User
-    fields = ["first_name", "middle_name", "last_name_number"]
+    model = Reader
+    fields = ["last_name_id", "first_name", "middle_name"]
     template_name = "create_user.html"
     success_url = "/reader/get_readers/"
