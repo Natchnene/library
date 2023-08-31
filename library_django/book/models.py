@@ -36,6 +36,8 @@ class IssueBook(models.Model, DateTimeMixin):
     book_return = models.DateField(blank=True, null=True)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     reader = models.ForeignKey("reader.Reader", on_delete=models.CASCADE)
+    onhandbook = models.OneToOneField(OnHandBook, models.SET_NULL, null=True)
 
     def __str__(self):
         return f"{self.book.id} - {self.book.name} Дата выдачи: {self.book_get} Дата сдачи: {self.book_return} Читатель: {self.reader.last_name_id}"
+

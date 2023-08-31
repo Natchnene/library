@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book return</title>
+</head>
+<body>
+    <form action="/book/update_issue_book/on_hand_book/{{ on_hand_book.id }}" method="post">
+        {% csrf_token %}
+        <a>Введите дату сдачи в формате: год-месяц-день</a>
+        <input type="text" name="date">
+        <a>Введите код книги</a>
+        <input type="text" name="book_id">
+        <input type="submit" name="Вернуть книгу">
+    </form>
+</body>
+</html>
