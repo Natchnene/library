@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List readers</title>
+</head>
+<body>
+    <h1>Список читателей</h1>
+
+    <ul>
+
+      {% for object in object_list %}
+      <li>
+        <a href="http://127.0.0.1:8000/book/start_page_book/{{ object.id }}"> {{ object.last_name_id }} </a>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+        <a href="/reader/create_user/">  Добавить пользователя </a>
+
+</body>
+</html>

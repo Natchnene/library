@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<h1>Список книг у читателя</h1>
+{% if on_hand_book %}
+    <ul>
+      {% for on_hand_book in on_hand_book %}
+      <li>
+        <a> {{ on_hand_book.book__id }} - {{on_hand_book.book__name}} </a>
+      </li>
+       {% endfor %}
+    </ul>
+    <a href="http://127.0.0.1:8000/book/form_for_update_issue_book/on_hand_book/{{ on_hand_book_2.0.id }}">Сдать книгу</a>
+    <a href="http://127.0.0.1:8000/book/start_page_book/{{ reader.id }}">Назад</a>
+{% else %}
+    <p>У вас нет книг</p>
+    <a href="http://127.0.0.1:8000/book/start_page_book/{{ reader.id }}">Назад</a>
+    <a href="http://127.0.0.1:8000/reader/get_readers/">Выйти</a>
+{% endif %}
+</body>
+</html>
